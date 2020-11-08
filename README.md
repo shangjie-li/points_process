@@ -37,16 +37,16 @@ ROS package for processing lidar points
    <param name="the_stdmul" value="1.0"/>
    <param name="the_leafsize" value="0.02"/>
    ```
-    - sub_topic指明订阅的点云话题。
-    - pub_topic指明发布的点云话题。
-    - the_view_number为视场区域编号，1为x正向，2为y负向，3为x负向，4为y正向。
-    - the_field_of_view为水平视场角，单位度。
-    - the_sensor_height指明传感器距地面高度，单位为米。
-    - the_view_higher_limit/lower_limit指明期望的点云相对地面的限制高度，单位为米。
-    - the_min_distance/max_distance指明期望的点云相对传感器的限制距离，单位为米。
+    - `sub_topic`指明订阅的点云话题。
+    - `pub_topic`指明发布的点云话题。
+    - `the_view_number`为视场区域编号，1为x正向，2为y负向，3为x负向，4为y正向。
+    - `the_field_of_view`为水平视场角，单位度。
+    - `the_sensor_height`指明传感器距地面高度，单位为米。
+    - `the_view_higher_limit`和`the_view_lower_limit`指明期望的点云相对地面的限制高度，单位为米。
+    - `the_min_distance`和`the_max_distance`指明期望的点云相对传感器的限制距离，单位为米。
 
 ## 运行
- - 启动points_process
+ - 启动`points_process`
    ```Shell
    roslauch points_process points_process.launch
    ```
