@@ -39,7 +39,7 @@ ROS package for processing lidar points
    ```
     - `sub_topic`指明订阅的点云话题。
     - `pub_topic`指明发布的点云话题。
-    - `the_view_number`为视场区域编号，1为x正向，2为y负向，3为x负向，4为y正向。
+    - `the_view_number`为激光雷达视场区域编号，1为x正向，2为y负向，3为x负向，4为y正向。
     - `the_field_of_view`为水平视场角，单位度。
     - `the_sensor_height`指明传感器距地面高度，单位为米。
     - `the_view_higher_limit`和`the_view_lower_limit`指明期望的点云相对地面的限制高度，单位为米。
