@@ -48,7 +48,7 @@ ROS package for processing lidar points
 ## 运行
  - 启动`points_process`
    ```Shell
-   roslauch points_process points_process.launch
+   roslaunch points_process points_process.launch
    ```
 
 
