@@ -15,8 +15,8 @@ ROS package for processing lidar points
 ## 参数配置
  - 修改`points_process/launch/points_process.launch`
    ```Shell
-   <param name="sub_topic" value="/velodyne_points"/>
-   <param name="pub_topic" value="/velodyne_points_processed"/>
+   <param name="sub_topic" value="/pandar_points"/>
+   <param name="pub_topic" value="/pandar_points_processed"/>
         
    <param name="is_limit_mode" value="true"/>
    <param name="is_clip_mode" value="true"/>
