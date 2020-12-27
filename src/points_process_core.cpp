@@ -48,12 +48,12 @@ void PclTestCore::limit(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
 
     clipper.setInputCloud(in);//输入点云
     pcl::PointIndices indices;//创建索引
-//pragma omp for语法是OpenMP的并行化语法，即希望通过OpenMP并行化执行这条语句后的for循环，从而起到加速效果
-#pragma omp for
     if (view_number == 1)
     {
         float alpha = 90 - 0.5 * field_of_view;
         float k = tan(alpha * PI / 180.0f);
+//pragma omp for语法是OpenMP的并行化语法，即希望通过OpenMP并行化执行这条语句后的for循环，从而起到加速效果
+#pragma omp for
         for (size_t i = 0; i < in->points.size(); i++)
         {
             if (in->points[i].x > k * in->points[i].y && in->points[i].x > -k * in->points[i].y)
@@ -70,6 +70,8 @@ void PclTestCore::limit(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
     {
         float alpha = 90 - 0.5 * field_of_view;
         float k = tan(alpha * PI / 180.0f);
+//pragma omp for语法是OpenMP的并行化语法，即希望通过OpenMP并行化执行这条语句后的for循环，从而起到加速效果
+#pragma omp for
         for (size_t i = 0; i < in->points.size(); i++)
         {
             if (-in->points[i].y > k * in->points[i].x && -in->points[i].y > -k * in->points[i].x)
@@ -86,6 +88,8 @@ void PclTestCore::limit(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
     {
         float alpha = 90 - 0.5 * field_of_view;
         float k = tan(alpha * PI / 180.0f);
+//pragma omp for语法是OpenMP的并行化语法，即希望通过OpenMP并行化执行这条语句后的for循环，从而起到加速效果
+#pragma omp for
         for (size_t i = 0; i < in->points.size(); i++)
         {
             if (-in->points[i].x > k * in->points[i].y && -in->points[i].x > -k * in->points[i].y)
@@ -102,6 +106,8 @@ void PclTestCore::limit(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
     {
         float alpha = 90 - 0.5 * field_of_view;
         float k = tan(alpha * PI / 180.0f);
+//pragma omp for语法是OpenMP的并行化语法，即希望通过OpenMP并行化执行这条语句后的for循环，从而起到加速效果
+#pragma omp for
         for (size_t i = 0; i < in->points.size(); i++)
         {
             if (in->points[i].y > k * in->points[i].x && in->points[i].y > -k * in->points[i].x)
