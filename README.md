@@ -20,7 +20,7 @@ ROS package for processing lidar points
    <param name="pub_topic" value="/pandar_points_processed"/>
 
    <param name="crop_view_mode" value="true"/>
-   <param name="croe_range_mode" value="true"/>
+   <param name="crop_range_mode" value="true"/>
    <param name="filter_mode" value="false"/>
    <param name="downsample_mode" value="true"/>
    <param name="show_points_size" value="true"/>
