@@ -18,46 +18,48 @@
 
 #define PI 3.1415926
 
-class PclTestCore
+class Processor
 {
   private:
-    std::string sub_topic_name;
-    std::string pub_topic_name;
+    std::string sub_topic_;
+    std::string pub_topic_;
     
-    bool limit_mode;
-    bool clip_mode;
-    bool filter_mode;
-    bool downsample_mode;
-    bool show_points_size;
+    bool crop_view_mode_;
+    bool crop_range_mode_;
+    bool filter_mode_;
+    bool downsample_mode_;
+    bool show_points_size_;
+    bool show_time_;
     
-    float view_number;
-    float field_of_view;
+    float view_number_;
+    float field_of_view_;
 
-    float sensor_height;
-    float view_higher_limit;
-    float view_lower_limit;
-    float min_distance;
-    float max_distance;
+    float sensor_height_;
+    float view_higher_limit_;
+    float view_lower_limit_;
+    float min_distance_;
+    float max_distance_;
     
-    float meank;
-    float stdmul;
-    float leafsize;
+    float meank_;
+    float stdmul_;
+
+    float leafsize_;
     
-    ros::Subscriber sub_point_cloud_;
-    ros::Publisher pub_point_cloud_processed_;
+    ros::Subscriber sub_;
+    ros::Publisher pub_;
     
-    //视场限制
-    void limit(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
+    //视场裁剪
+    void crop_view(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
                         const pcl::PointCloud<pcl::PointXYZ>::Ptr out);
-    //区域裁剪
-    void clip(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
+    //距离裁剪
+    void crop_range(const pcl::PointCloud<pcl::PointXYZ>::Ptr in,
                        const pcl::PointCloud<pcl::PointXYZ>::Ptr out);
     //回调函数
-    void point_cb(const sensor_msgs::PointCloud2ConstPtr& in_cloud);
+    void callback(const sensor_msgs::PointCloud2ConstPtr& in);
 
   public:
-    PclTestCore(ros::NodeHandle &nh);
-    ~PclTestCore();
+    Processor(ros::NodeHandle &nh);
+    ~Processor();
     void Spin();
 };
 
