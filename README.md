@@ -11,8 +11,7 @@ ROS package for processing lidar points
    cd ..
    catkin_make
    ```
-
-
+   
 ## 参数配置
  - 修改`points_process/launch/points_process.launch`
    ```Shell
